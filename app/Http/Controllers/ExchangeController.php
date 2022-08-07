@@ -17,10 +17,10 @@ class ExchangeController extends Controller
             $request->validate([
                 'SourceType' => 'required|alpha|size:3',
                 'TargetType' => 'required|alpha|size:3',
-                'Price' => 'required|integer',
+                'Price' => 'required|numeric',
             ]);
 
-            $rate = $this->getRate($request->SourceType, $request->TargetType);
+            $rate = $this->getRate(strtoupper($request->SourceType), strtoupper($request->TargetType));
             $result = number_format($request->Price * $rate, 2, '.', ',');
         } catch (ValidationException $exception) {
             return response()->json([
