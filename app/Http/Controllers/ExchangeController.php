@@ -32,7 +32,7 @@ class ExchangeController extends Controller
             return response($e->getMessage(), Response::HTTP_UNPROCESSABLE_ENTITY);
         }
 
-        return response($result, Response::HTTP_CREATED);
+        return response($result, Response::HTTP_OK);
     }
 
     private function getRate(string $sourceType, string $targetType)

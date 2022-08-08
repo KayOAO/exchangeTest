@@ -15,6 +15,3 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/exchange', [ExchangeController::class, 'exchange']);
-// Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
-//     return $request->user();
-// });

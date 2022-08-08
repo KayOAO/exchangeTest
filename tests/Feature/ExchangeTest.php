@@ -23,7 +23,7 @@ class ExchangeTest extends TestCase
         ];
 
         $response = $this->json('GET', self::ROUTE, $data);
-        $response->assertStatus(Response::HTTP_CREATED);
+        $response->assertStatus(Response::HTTP_OK);
     }
 
     public function test_errorSource()
